@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Vote ứng dụng giúp mình nhé :)"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#E04343" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Bạn có thể +1 và cho đánh giá ứng dụng được không :)"
+        android:textColor="#E04343" />
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnVote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#E04343"
+            android:text="Ok thôi :)" />
+
+        <Button
+            android:id="@+id/btnKhong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E04343"
+            android:text="Không hiện lại:(" />
+
+    </TableRow>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#E04343"
+        android:text="Để lần sau nhé :)" />
+
+</LinearLayout>
