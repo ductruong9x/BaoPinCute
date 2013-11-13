@@ -3,57 +3,81 @@
     android:id="@+id/LinearLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E5E5E5"
     android:orientation="vertical"
+    android:padding="0dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Dialog"
-    android:background="#6C6C6C" 
-    android:padding="3dp">
+    tools:context=".Dialog" >
 
     <LinearLayout
+        android:id="@+id/LinearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" 
-        android:background="#6C6C6C">
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/list"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon" />
 
         <TextView
             android:id="@+id/tvTitleDutSac"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
+            android:gravity="left"
             android:text="Pin yếu"
+            android:layout_marginTop="3dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#FFFFFF" />
+            android:textColor="#A866E2" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:orientation="vertical"
-        android:background="#0286EB" >
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvNoiDungDutSac"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nội dung thông báo"
-        android:textColor="#FFFFFF"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/list"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvNoiDungDutSac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Nội dung thông báo"
+            android:textSize="15dp"
+            android:textColor="#A866E2" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnCancelDutSac"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/buttonselector"
         android:text="Nội dung button"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:background="@drawable/buttonselector"
-         />
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
 
 </LinearLayout>

@@ -19,8 +19,11 @@
         android:enabled="true"
         android:key="ngatsac"
         android:title="@string/ngatsac" />
-    <Preference android:key="pinday" android:title="@string/pin_day" android:enabled="false"/>
+    <Preference
+        android:enabled="false"
+        android:key="pinday"
+        android:title="@string/pin_day" />
 
-    
+    <truongtvd.baopinfunny.AdPreference android:layout="@layout/ad_layout" />
 
 </PreferenceScreen>

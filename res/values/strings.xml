@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Báo Pin Funny</string>
+    <string name="app_name">Battery Funny</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="lua_chon">Lựa chọn thông báo</string>
-    <string name="pin_yeu">Thông báo pin yếu</string>
-    <string name="camsac">Thông báo kết nối sạc</string>
-    <string name="ngatsac">Thông báo ngắt kết nối sạc</string>
-    <string name="thongbaopin">Sự kiện báo pin</string>
-    <string name="pin_day">Thông báo pin đầy</string>
-    <string name="title_activity_pin_yeu">Pin Yếu</string>
-    <string name="title">Tiêu đề:</string>
-    <string name="noidung">Nội dụng thông báo:</string>
-    <string name="button_noidung">Nội dung nút tắt:</string>
-    <string name="capnhat">Cập nhật</string>
-    <string name="title_pinyeu">Hiện thông báo</string>
+    <string name="lua_chon">Choose Notification</string>
+    <string name="pin_yeu">Battery Low</string>
+    <string name="camsac">Power Connected</string>
+    <string name="ngatsac">Power Disconnected</string>
+    <string name="thongbaopin">Battery Event</string>
+    <string name="pin_day">Battery Full</string>
+    <string name="title_activity_pin_yeu">Battery Low</string>
+    <string name="title">Title:</string>
+    <string name="noidung">Content:</string>
+    <string name="button_noidung">Button content:</string>
+    <string name="capnhat">Update</string>
+    <string name="title_pinyeu">Show Notification</string>
     <string name="title_activity_dialog">Dialog</string>
     <string name="luuy">Lưu ý: Một số máy hiện thị không như ý muốn hoặc chưa thể hiển thị. Mong nhận được phản hồi và đánh giá của người dùng</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_dialog_cam_sac">DialogCamSac</string>
-    <string name="title_activity_cam_sac">Cắm Sạc</string>
-	<string name="canhbao">Tắt/bật báo pin:</string>
-    <color name="black">#444444</color>
+    <string name="title_activity_cam_sac">Power Connected</string>
+	<string name="canhbao">On/Off:</string>
+    <color name="black">#A866E2</color>
     <color name="blue">#0286EB</color>
 
     <string name="title_activity_dut_sac">DutSac</string>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="truongtvd.baopinfunny"
-    android:versionCode="2"
-    android:versionName="1.1" >
+    android:versionCode="5"
+    android:versionName="1.4" >
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <permission
         android:name="truongtvd.baopinfunny.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
@@ -33,7 +34,7 @@
         <activity
             android:name="truongtvd.baopinfunny.MainActivity"
             android:label="@string/app_name" >
-             <intent-filter>
+            <intent-filter>
                 <action android:name="truongtvd.baopinfunny.MESSAGE" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -47,6 +48,10 @@
             android:name="truongtvd.baopinfunny.DialogThongBao"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
+
+        <meta-data
+            android:name="vn.sunnet.util.ads.widget_id"
+            android:value="3e17cf42209ea77573cde0204cc5515a" />
 
         <receiver android:name="truongtvd.baopinfunny.BcThonBao" >
             <intent-filter>
@@ -73,9 +78,9 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-           
         </activity>
         <activity
             android:name="truongtvd.baopinfunny.DialogCamSac"

@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DialogThongBao extends Activity {
 	TextView tvNoiDung,tvTitle;
 	Button btnCancel;
-
+	ImageView img;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -22,16 +23,14 @@ public class DialogThongBao extends Activity {
 		setContentView(R.layout.activity_dialog);
 		tvNoiDung = (TextView) findViewById(R.id.tvNoiDung);
 		btnCancel = (Button) findViewById(R.id.btnCancel);
+		img=(ImageView)findViewById(R.id.imageView1);
 		tvTitle=(TextView)findViewById(R.id.tvTitle);
 		btnCancel.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i=new Intent(Intent.ACTION_SCREEN_OFF);
-				finish();
-				startActivity(i);
-				
+				finish();	
 			}
 		});
 	}

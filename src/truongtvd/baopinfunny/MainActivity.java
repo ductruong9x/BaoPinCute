@@ -7,6 +7,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.text.Html;
+import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +25,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 
 public class MainActivity extends PreferenceActivity {
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -180,7 +182,7 @@ public class MainActivity extends PreferenceActivity {
 					.setIcon(R.drawable.icon);
 			gioithieu
 					.setMessage(Html
-							.fromHtml("<font color='#1AA1E1' size='25'>App Name: Báo Pin Funny</font><br/><font color='#1AA1E1' size='25'>Email tác giả: ductruongcntt@gmail.com</font><br/><font color='#1AA1E1' size='25'>Version: 1.1</font>"));
+							.fromHtml("<font color='#1AA1E1' size='25'>App Name: Báo Pin Funny</font><br/><font color='#1AA1E1' size='25'>Email tác giả: ductruongcntt@gmail.com</font><br/><font color='#1AA1E1' size='25'>Version: 1.4</font>"));
 
 			gioithieu.setPositiveButton(Html
 					.fromHtml("<font color='#1AA1E1' size='25'>Đóng</font>"),

@@ -20,28 +20,29 @@ public class BcThonBao extends BroadcastReceiver {
 		boolean ktPinYeu = myShare.getBoolean("ktPinYeu", true);
 		int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
 		boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||status ==BatteryManager.BATTERY_STATUS_FULL;
-		int levet=-1;
+		int levet=intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
 		if(intent.getAction().equals("android.intent.action.ACTION_BATTERY_CHANGED")){
-			levet=intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-			Log.v("LEVEL PIN", String.valueOf(levet));
+			
+			
 			Intent myintent = new Intent(context, DialogCamSac.class);
 			myintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			context.startActivity(myintent);
 		}
-			
-	
+
 		if (ktCamSac == true) {
 			if (intent.getAction().equals(
 					"android.intent.action.ACTION_POWER_CONNECTED")) {
-				
+				Log.v("LEVEL PIN", String.valueOf(levet));
+				Toast.makeText(context, String.valueOf(levet), Toast.LENGTH_LONG).show();
 				Intent myintent = new Intent(context, DialogCamSac.class);
 				myintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				
 				context.startActivity(myintent);
 			}
+		
 		} else {
 
 		}
+	
 		if (ktPinYeu == true) {
 			if (intent.getAction().equals("android.intent.action.BATTERY_LOW")) {
 				Intent myintent = new Intent(context, DialogThongBao.class);
