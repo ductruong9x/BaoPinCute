@@ -9,7 +9,8 @@
     <string name="camsac">Thông báo kết nối sạc</string>
     <string name="ngatsac">Thông báo ngắt kết nối sạc</string>
     <string name="thongbaopin">Sự kiện báo pin</string>
-    <string name="pin_day">Thông báo pin đầy</string>
+    <string name="pin_day">Lựa chọn màu nền</string>
+    <string name="chubutton">Lựa chọn màu chữ nút</string>
     <string name="title_activity_pin_yeu">Pin Yếu</string>
     <string name="title">Tiêu đề:</string>
     <string name="noidung">Nội dụng thông báo:</string>
@@ -22,6 +23,10 @@
     <string name="title_activity_dialog_cam_sac">DialogCamSac</string>
     <string name="title_activity_cam_sac">Cắm Sạc</string>
 	<string name="canhbao">Tắt/bật báo pin:</string>
+	<string name="chuong">Bật/Tắt âm báo:</string>
+	<string name="rung">Bật/Tắt rung:</string>
+	<string name="thongbaoluu">Đã lưu mầu thành công</string>
+	<string name="kiemtra">Thử hiển thị</string>
     <color name="black">#A866E2</color>
     <color name="blue">#0286EB</color>
 

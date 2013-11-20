@@ -41,6 +41,12 @@ public class DialogCamSac extends Activity {
 		String title = myShare.getString("titleCamSac", "Đã Cắm Sạc !!!");
 		String noidung = myShare.getString("noidungCamSac", "Cắm sạc rồi nhé...");
 		String buttontext=myShare.getString("titlebuttonCamSac", "Đóng");
+		int mamau=myShare.getInt("mamau", -12234532);
+		int mamauchu=myShare.getInt("mamauchu", -1);
+		tvTitleCamSac.setTextColor(mamau);
+		tvNoiDungCamSac.setTextColor(mamau);
+		btnCancelCamSac.setBackgroundColor(mamau);
+		btnCancelCamSac.setTextColor(mamauchu);
 		tvTitleCamSac.setText(title);
 		tvNoiDungCamSac.setText(noidung);
 		btnCancelCamSac.setText(buttontext);

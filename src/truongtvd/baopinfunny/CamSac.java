@@ -21,12 +21,12 @@ public class CamSac extends Activity {
 	TextView edTitleCamSac, edNoiDungCamSac, edNoiDungButtonCamSac;
 	Button btnCapNhatCamSac;
 	private AdView adView;
-	CheckBox cboCamSac;
+	CheckBox cboCamSac,cboAmthanhCam;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_cam_sac);
-		adView = new AdView(this, AdSize.BANNER, "a1527e5b1a16616");
+		adView = new AdView(this, AdSize.BANNER, "a152842a3194432");
 	    LinearLayout layout = (LinearLayout)findViewById(R.id.LinearLayout3);
 	    
 	    layout.addView(adView);
@@ -36,6 +36,24 @@ public class CamSac extends Activity {
 		edTitleCamSac = (EditText) findViewById(R.id.edTitleCamSac);
 		edNoiDungCamSac = (EditText) findViewById(R.id.edNoiDungCamSac);
 		edNoiDungButtonCamSac = (EditText) findViewById(R.id.edNoiDungNutCamSac);
+		cboAmthanhCam=(CheckBox)findViewById(R.id.cboAmLuongCamSac);
+		cboAmthanhCam.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// TODO Auto-generated method stub
+				SharedPreferences myShare = getSharedPreferences("thongtin",
+						MODE_PRIVATE);
+				SharedPreferences.Editor edit=myShare.edit();
+				if(isChecked==true){
+					edit.putBoolean("ktAmThanhCamSac", true);
+					edit.commit();
+				}else{
+					edit.putBoolean("ktAmThanhCamSac", false);
+					edit.commit();
+				}
+			}
+		});
 		cboCamSac.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
 			@Override
@@ -71,6 +89,8 @@ public class CamSac extends Activity {
 		String title = myShare.getString("titleCamSac", "");
 		String noidung = myShare.getString("noidungCamSac", "");
 		String noidungbutton = myShare.getString("titlebuttonCamSac", "");
+		boolean ktAmThanhCamSac=myShare.getBoolean("ktAmThanhCamSac", true);
+		cboAmthanhCam.setChecked(ktAmThanhCamSac);
 		cboCamSac.setChecked(ktCamSac);
 		edTitleCamSac.setText(title);
 		edNoiDungCamSac.setText(noidung);

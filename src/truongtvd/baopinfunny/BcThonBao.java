@@ -1,10 +1,14 @@
 package truongtvd.baopinfunny;
 
+import java.io.IOException;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.BatteryManager;
+import android.os.Vibrator;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -18,33 +22,63 @@ public class BcThonBao extends BroadcastReceiver {
 		boolean ktCamSac = myShare.getBoolean("ktCamSac", true);
 		boolean ktDutSac = myShare.getBoolean("ktDutSac", true);
 		boolean ktPinYeu = myShare.getBoolean("ktPinYeu", true);
-		int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
-		boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||status ==BatteryManager.BATTERY_STATUS_FULL;
-		int levet=intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
-		if(intent.getAction().equals("android.intent.action.ACTION_BATTERY_CHANGED")){
-			
-			
-			Intent myintent = new Intent(context, DialogCamSac.class);
-			myintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			context.startActivity(myintent);
-		}
+		boolean ktAmThanhPinYeu = myShare.getBoolean("ktAmThanhPinYeu", true);
+		boolean ktRung = myShare.getBoolean("ktRung", true);
+		boolean ktAmThanhCamSac = myShare.getBoolean("ktAmThanhCamSac", true);
+		boolean ktAmThanhDutSac = myShare.getBoolean("ktAmThanhDutSac", true);
+		if (intent.getAction().equals(
+				"android.intent.action.ACTION_POWER_CONNECTED")) {
+			if (ktAmThanhCamSac == true) {
+				MediaPlayer mp = MediaPlayer.create(context, R.raw.connect);
+				try {
+					mp.prepare();
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				mp.start();
+			} else {
 
-		if (ktCamSac == true) {
-			if (intent.getAction().equals(
-					"android.intent.action.ACTION_POWER_CONNECTED")) {
-				Log.v("LEVEL PIN", String.valueOf(levet));
-				Toast.makeText(context, String.valueOf(levet), Toast.LENGTH_LONG).show();
+			}
+			if (ktCamSac == true) {
 				Intent myintent = new Intent(context, DialogCamSac.class);
 				myintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				context.startActivity(myintent);
 			}
-		
+
 		} else {
 
 		}
-	
-		if (ktPinYeu == true) {
-			if (intent.getAction().equals("android.intent.action.BATTERY_LOW")) {
+
+		Vibrator vide = (Vibrator) context
+				.getSystemService(Context.VIBRATOR_SERVICE);
+		if (intent.getAction().equals("android.intent.action.BATTERY_LOW")) {
+
+			if (ktAmThanhPinYeu == true) {
+				MediaPlayer mp = MediaPlayer.create(context, R.raw.pinyeu);
+				try {
+					mp.prepare();
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				mp.start();
+			} else {
+
+			}
+			if (ktRung == true) {
+				vide.vibrate(2000);
+			} else {
+
+			}
+			if (ktPinYeu == true) {
+
 				Intent myintent = new Intent(context, DialogThongBao.class);
 				myintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				context.startActivity(myintent);
@@ -52,10 +86,25 @@ public class BcThonBao extends BroadcastReceiver {
 		} else {
 
 		}
-		if (ktDutSac == true) {
-			if (intent.getAction().equals(
-					"android.intent.action.ACTION_POWER_DISCONNECTED")) {
 
+		if (intent.getAction().equals(
+				"android.intent.action.ACTION_POWER_DISCONNECTED")) {
+			if (ktAmThanhDutSac == true) {
+				MediaPlayer mp = MediaPlayer.create(context, R.raw.dutsac);
+				try {
+					mp.prepare();
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				mp.start();
+			}else{
+				
+			}
+			if (ktDutSac == true) {
 				Intent myintent = new Intent(context, DialogDutSac.class);
 				myintent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				context.startActivity(myintent);

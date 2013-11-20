@@ -8,6 +8,8 @@
         android:title="@string/thongbaopin" >
     </PreferenceCategory>
 
+    <truongtvd.baopinfunny.AdPreference android:layout="@layout/ad_layout" />
+
     <Preference
         android:key="pinyeu"
         android:title="@string/pin_yeu" />
@@ -20,10 +22,16 @@
         android:key="ngatsac"
         android:title="@string/ngatsac" />
     <Preference
-        android:enabled="false"
-        android:key="pinday"
+        android:enabled="true"
+        android:key="chonmau"
         android:title="@string/pin_day" />
-
-    <truongtvd.baopinfunny.AdPreference android:layout="@layout/ad_layout" />
+    <Preference
+        android:enabled="true"
+        android:key="chonmaubutton"
+        android:title="@string/chubutton" />
+    <Preference
+        android:enabled="true"
+        android:key="test"
+        android:title="@string/kiemtra" />
 
 </PreferenceScreen>

@@ -1,28 +1,29 @@
 package truongtvd.baopinfunny;
 
-import com.pushbots.push.Pushbots;
+import yuku.ambilwarna.AmbilWarnaDialog;
+import yuku.ambilwarna.AmbilWarnaDialog.OnAmbilWarnaListener;
+import yuku.ambilwarna.AmbilWarnaKotak;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.text.Html;
-import android.util.AttributeSet;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+
+import com.google.ads.AdView;
+import com.pushbots.push.Pushbots;
 
 public class MainActivity extends PreferenceActivity {
 
@@ -64,6 +65,86 @@ public class MainActivity extends PreferenceActivity {
 				return false;
 			}
 		});
+		Preference luaChon = (Preference) findPreference("chonmau");
+		luaChon.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				// TODO Auto-generated method stub
+			
+				AmbilWarnaDialog dialog = new AmbilWarnaDialog(
+						MainActivity.this, 222, new OnAmbilWarnaListener() {
+
+							@Override
+							public void onOk(AmbilWarnaDialog dialog, int color) {
+								// TODO Auto-generated method stub
+								SharedPreferences myShare = getSharedPreferences(
+										"thongtin", MODE_PRIVATE);
+								SharedPreferences.Editor edit = myShare.edit();
+								edit.putInt("mamau", color);
+								edit.commit();
+								Toast.makeText(
+										getApplication(),
+										getResources().getString(
+												R.string.thongbaoluu),
+										Toast.LENGTH_LONG).show();
+							}
+
+							@Override
+							public void onCancel(AmbilWarnaDialog dialog) {
+								// TODO Auto-generated method stub
+
+							}
+						});
+				dialog.show();
+				return false;
+			}
+		});
+		Preference kiemTra = (Preference) findPreference("test");
+		kiemTra.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(MainActivity.this, DialogThongBao.class);
+				startActivity(i);
+				return false;
+			}
+		});
+		Preference chuButton = (Preference) findPreference("chonmaubutton");
+		chuButton.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				// TODO Auto-generated method stub
+				AmbilWarnaDialog dialog = new AmbilWarnaDialog(
+						MainActivity.this, 222, new OnAmbilWarnaListener() {
+
+							@Override
+							public void onOk(AmbilWarnaDialog dialog, int color) {
+								// TODO Auto-generated method stub
+								SharedPreferences myShare = getSharedPreferences(
+										"thongtin", MODE_PRIVATE);
+								SharedPreferences.Editor edit = myShare.edit();
+								edit.putInt("mamauchu", color);
+								edit.commit();
+								Toast.makeText(
+										getApplication(),
+										getResources().getString(
+												R.string.thongbaoluu),
+										Toast.LENGTH_LONG).show();
+							}
+
+							@Override
+							public void onCancel(AmbilWarnaDialog dialog) {
+								// TODO Auto-generated method stub
+
+							}
+						});
+				dialog.show();
+				return false;
+			}
+		});
 		danhGia();
 	}
 
@@ -73,6 +154,7 @@ public class MainActivity extends PreferenceActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
 	public void danhGia() {
 		SharedPreferences getPre = getSharedPreferences("setting", MODE_PRIVATE);
 		int i = getPre.getInt("VOTE", 0);
@@ -113,9 +195,9 @@ public class MainActivity extends PreferenceActivity {
 			final Dialog dialog = new Dialog(this);
 			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			dialog.setContentView(R.layout.dialog_vote);
-			
-//			dialog.getWindow().setBackgroundDrawable(
-//					new ColorDrawable(Color.argb(50, 255, 255, 255)));
+
+			// dialog.getWindow().setBackgroundDrawable(
+			// new ColorDrawable(Color.argb(50, 255, 255, 255)));
 			Button btnVote = (Button) dialog.findViewById(R.id.btnVote);
 			Button btnKhong = (Button) dialog.findViewById(R.id.btnKhong);
 			Button btnCancel = (Button) dialog.findViewById(R.id.btnCancel);
@@ -159,6 +241,7 @@ public class MainActivity extends PreferenceActivity {
 			break;
 		}
 	}
+
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		// TODO Auto-generated method stub
@@ -182,7 +265,7 @@ public class MainActivity extends PreferenceActivity {
 					.setIcon(R.drawable.icon);
 			gioithieu
 					.setMessage(Html
-							.fromHtml("<font color='#1AA1E1' size='25'>App Name: Báo Pin Funny</font><br/><font color='#1AA1E1' size='25'>Email tác giả: ductruongcntt@gmail.com</font><br/><font color='#1AA1E1' size='25'>Version: 1.4</font>"));
+							.fromHtml("<font color='#1AA1E1' size='25'>App Name: Báo Pin Funny</font><br/><font color='#1AA1E1' size='25'>Email tác giả: ductruongcntt@gmail.com</font><br/><font color='#1AA1E1' size='25'>Version: 2.3</font>"));
 
 			gioithieu.setPositiveButton(Html
 					.fromHtml("<font color='#1AA1E1' size='25'>Đóng</font>"),
@@ -279,5 +362,5 @@ public class MainActivity extends PreferenceActivity {
 	public static boolean isActive() {
 		return active;
 	}
-	
+
 }

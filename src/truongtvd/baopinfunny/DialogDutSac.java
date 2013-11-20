@@ -39,6 +39,12 @@ public class DialogDutSac extends Activity {
 		String title = myShare.getString("titleDutSac", "Đã Dút sạc !!!");
 		String noidung = myShare.getString("noidungDutSac", "Dút sạc rồi nhé...");
 		String buttontext=myShare.getString("titlebuttonDutSac", "Đóng");
+		int mamau=myShare.getInt("mamau", -12234532);
+		int mamauchu=myShare.getInt("mamauchu", -1);
+		tvTitleDutSac.setTextColor(mamau);
+		tvNoiDungDutSac.setTextColor(mamau);
+		btnCancelDutSac.setBackgroundColor(mamau);
+		btnCancelDutSac.setTextColor(mamauchu);
 		tvTitleDutSac.setText(title);
 		tvNoiDungDutSac.setText(noidung);
 		btnCancelDutSac.setText(buttontext);

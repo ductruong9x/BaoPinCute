@@ -9,7 +9,7 @@
     <string name="camsac">Power Connected</string>
     <string name="ngatsac">Power Disconnected</string>
     <string name="thongbaopin">Battery Event</string>
-    <string name="pin_day">Battery Full</string>
+    <string name="pin_day">Choose Color Background</string>
     <string name="title_activity_pin_yeu">Battery Low</string>
     <string name="title">Title:</string>
     <string name="noidung">Content:</string>
@@ -17,11 +17,16 @@
     <string name="capnhat">Update</string>
     <string name="title_pinyeu">Show Notification</string>
     <string name="title_activity_dialog">Dialog</string>
-    <string name="luuy">Lưu ý: Một số máy hiện thị không như ý muốn hoặc chưa thể hiển thị. Mong nhận được phản hồi và đánh giá của người dùng</string>
+    <string name="luuy">Note: Some machines do not display as intended or can not show. Looking forward to receiving feedback and user reviews</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_dialog_cam_sac">DialogCamSac</string>
     <string name="title_activity_cam_sac">Power Connected</string>
-	<string name="canhbao">On/Off:</string>
+	<string name="canhbao">On/Off Notification:</string>
+	<string name="chuong">On/Off Sound:</string>
+	<string name="rung">On/Off Vibrate:</string>
+	<string name="thongbaoluu">Saved</string>
+	<string name="kiemtra">Test Dialog</string>
+	<string name="chubutton">Choose color text button</string>
     <color name="black">#A866E2</color>
     <color name="blue">#0286EB</color>
 
