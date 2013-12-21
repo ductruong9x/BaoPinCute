@@ -116,7 +116,8 @@ public class PinYeu extends Activity {
 		edTitle.setText(title);
 		edNoiDung.setText(noidung);
 		edNoiDungButton.setText(noidungbutton);
-	
+		AdflexHelper.show(this);
+		AdflexHelper.enableGift(getApplication());
 	}
 	
 	public void btnCapNhat(View v) {

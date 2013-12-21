@@ -265,7 +265,7 @@ public class MainActivity extends PreferenceActivity {
 					.setIcon(R.drawable.icon);
 			gioithieu
 					.setMessage(Html
-							.fromHtml("<font color='#1AA1E1' size='25'>App Name: Báo Pin Funny</font><br/><font color='#1AA1E1' size='25'>Email tác giả: ductruongcntt@gmail.com</font><br/><font color='#1AA1E1' size='25'>Version: 2.3</font>"));
+							.fromHtml("<font color='#1AA1E1' size='25'>App Name: Báo Pin Funny</font><br/><font color='#1AA1E1' size='25'>Email tác giả: ductruongcntt@gmail.com</font><br/><font color='#1AA1E1' size='25'>Version: 2.4</font>"));
 
 			gioithieu.setPositiveButton(Html
 					.fromHtml("<font color='#1AA1E1' size='25'>Đóng</font>"),
@@ -351,6 +351,8 @@ public class MainActivity extends PreferenceActivity {
 	public void onStart() {
 		super.onStart();
 		active = true;
+		AdflexHelper.show(this);
+		AdflexHelper.enableGift(getApplication());
 	}
 
 	@Override

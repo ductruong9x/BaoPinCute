@@ -1,5 +1,6 @@
 package truongtvd.baopinfunny;
 
+
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -95,7 +96,8 @@ public class CamSac extends Activity {
 		edTitleCamSac.setText(title);
 		edNoiDungCamSac.setText(noidung);
 		edNoiDungButtonCamSac.setText(noidungbutton);
-	
+		AdflexHelper.show(this);
+		AdflexHelper.enableGift(getApplication());
 	}
 	
 	public void btnCapNhatCamSac(View v) {

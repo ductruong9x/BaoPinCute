@@ -1,5 +1,7 @@
 package truongtvd.baopinfunny;
 
+
+
 import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
@@ -99,7 +101,8 @@ public class DutSac extends Activity {
 		edTitleDutSac.setText(title);
 		edNoiDungDutSac.setText(noidung);
 		edNoiDungButtonDutSac.setText(noidungbutton);
-
+		AdflexHelper.show(this);
+		AdflexHelper.enableGift(getApplication());
 	}
 
 	public void btnCapNhatDutSac(View v) {
